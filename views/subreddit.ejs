@@ -1,0 +1,25 @@
+<%- include("partials/head") %>
+
+<body>
+	
+	<%- include("partials/navbar") %>
+	
+	<h1>Welcome to the <%= data.name %> page. Subscribers <%= data.subscribers %></h1>
+	<p><%= data.description %></p>
+	<hr>
+	
+	<div id="posts">
+		<% data.posts.forEach(function(post){ %>
+			<div class="container" id="post" style="border: 2px solid black;">
+				<h2> <%= post.title %></h2>
+				<p>The outhor of this post is <em><%= post.author%></em></p>
+				<% if(post.img){ %>
+					<img src="<%= post.img %>">
+				<% } %>
+			</div>
+		<% }) %>
+	</div>
+	
+	
+</body>
+<%- include("partials/footer") %>
